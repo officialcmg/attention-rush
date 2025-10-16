@@ -1,4 +1,4 @@
-import { Wallet, LogOut } from 'lucide-react';
+import { Wallet, LogOut, Copy, ExternalLink } from 'lucide-react';
 
 interface HeaderProps {
   connected: boolean;
@@ -19,6 +19,14 @@ export function Header({
   onDisconnect,
   pendingPayments
 }: HeaderProps) {
+  const handleCopyAddress = () => {
+    navigator.clipboard.writeText(subAccountAddress);
+  };
+
+  const handleOpenBasescan = () => {
+    window.open(`https://sepolia.basescan.org/address/${subAccountAddress}`, '_blank');
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-blue-600 text-white shadow-lg">
       <div className="container mx-auto px-4 py-4">
@@ -43,9 +51,25 @@ export function Header({
             {connected ? (
               <div className="flex items-center gap-3">
                 <div className="text-right">
-                  <div className="text-xs text-blue-100">Sub Account</div>
-                  <div className="text-sm font-mono">
-                    {subAccountAddress.slice(0, 6)}...{subAccountAddress.slice(-4)}
+                  <div className="text-xs text-blue-100">Account</div>
+                  <div className="flex items-center gap-2">
+                    <div className="text-sm font-mono">
+                      {subAccountAddress.slice(0, 6)}...{subAccountAddress.slice(-4)}
+                    </div>
+                    <button
+                      onClick={handleCopyAddress}
+                      className="p-1 hover:bg-blue-700 rounded transition"
+                      title="Copy address"
+                    >
+                      <Copy size={14} />
+                    </button>
+                    <button
+                      onClick={handleOpenBasescan}
+                      className="p-1 hover:bg-blue-700 rounded transition"
+                      title="View on Basescan"
+                    >
+                      <ExternalLink size={14} />
+                    </button>
                   </div>
                 </div>
                 <button
