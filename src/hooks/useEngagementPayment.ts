@@ -9,7 +9,7 @@ export function useEngagementPayment(
   cast: FarcasterCast | null,
   enabled: boolean
 ) {
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<number | null>(null);
   const paymasterUrl = import.meta.env.VITE_PAYMASTER_URL;
 
   useEffect(() => {

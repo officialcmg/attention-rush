@@ -13,7 +13,6 @@ function App() {
   // Base Account connection
   const {
     provider,
-    universalAddress, // Main account to display
     subAccountAddress, // Sub account for payments
     connected,
     loading: accountLoading,
@@ -31,7 +30,7 @@ function App() {
     connected
   );
 
-  // Engagement payments (every 2 seconds)
+  // Engagement payments (every 4 seconds)
   useEngagementPayment(
     provider,
     subAccountAddress,
@@ -47,7 +46,6 @@ function App() {
     <div className="min-h-screen bg-gray-50">
       <Header
         connected={connected}
-        universalAddress={universalAddress}
         subAccountAddress={subAccountAddress}
         loading={accountLoading}
         onConnect={connect}
@@ -86,7 +84,7 @@ function App() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600">🎯</span>
-                  <span>Click posts for extra engagement tips (every 2s)</span>
+                  <span>Click posts for extra engagement tips (every 4s)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600">⚡</span>

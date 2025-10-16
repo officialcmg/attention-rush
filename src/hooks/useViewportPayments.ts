@@ -18,7 +18,7 @@ export function useViewportPayments(
     address: string;
   }>>([]);
   
-  const batchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const batchTimeoutRef = useRef<number | null>(null);
   const paymasterUrl = import.meta.env.VITE_PAYMASTER_URL;
 
   // Process batch payments

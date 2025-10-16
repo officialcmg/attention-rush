@@ -2,7 +2,6 @@ import { Wallet, LogOut, Copy, ExternalLink } from 'lucide-react';
 
 interface HeaderProps {
   connected: boolean;
-  universalAddress: string; // Main account to display
   subAccountAddress: string;
   loading: boolean;
   onConnect: () => void;
@@ -12,7 +11,6 @@ interface HeaderProps {
 
 export function Header({
   connected,
-  universalAddress,
   subAccountAddress,
   loading,
   onConnect,

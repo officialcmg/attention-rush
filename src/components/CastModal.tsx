@@ -110,7 +110,7 @@ export function CastModal({ cast, onClose }: CastModalProps) {
                   Engagement Payment Active
                 </div>
                 <div className="text-sm text-green-600">
-                  Tipping {cast.author.display_name} every 2 seconds while viewing
+                  Tipping {cast.author.display_name} every 4 seconds while viewing
                 </div>
               </div>
             </div>
