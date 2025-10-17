@@ -37,6 +37,9 @@ export function Header({
               <h1 className="text-xl font-bold">AttentionRush</h1>
               <p className="text-xs text-blue-100">Pay creators with your attention</p>
             </div>
+            <div className="ml-2 bg-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
+              TIPPING USING USDC ON BASE SEPOLIA
+            </div>
           </div>
 
           <div className="flex items-center gap-4">
