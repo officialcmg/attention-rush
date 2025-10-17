@@ -52,7 +52,7 @@ export function Header({
             {connected ? (
               <div className="flex items-center gap-3">
                 <div className="text-right">
-                  <div className="text-xs text-blue-100">Account</div>
+                  <div className="text-xs text-blue-100">Sub Account</div>
                   <div className="flex items-center gap-2">
                     <div className="text-sm font-mono">
                       {subAccountAddress.slice(0, 6)}...{subAccountAddress.slice(-4)}
